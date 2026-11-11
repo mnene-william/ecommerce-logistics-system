@@ -38,6 +38,9 @@ public class InventoryManager {
         }
 
 
+        stock.put(productId, available - quantity);
+
+
         reservations.put(orderId, order);
 
         order.setStatus(CustomerOrder.OrderStatus.RESERVED);
@@ -63,7 +66,7 @@ public class InventoryManager {
         int quantity = reservation.getQuantity();
 
 
-        stock.put( productId, stock.get(productId) + quantity);
+        stock.put(productId, stock.get(productId) + quantity);
 
         return true;
     }

@@ -1,11 +1,31 @@
 
 
+
 public class Main {
-    public static void main (String[] args){
+    public static void main(String[] args) {
 
-        CustomerOrder order = new CustomerOrder( "ORDER001", "William", "A", 2);
+        InventoryManager inventory = new InventoryManager();
 
-        System.out.println(order);
+        CustomerOrder order = new CustomerOrder("ORD001", "William", "A", 20);
 
+        System.out.println("Initial stock:");
+
+        inventory.displayStock();
+
+        System.out.println("\nReserving stock...");
+
+        boolean reserved = inventory.reserveStock(order);
+
+        System.out.println("Reservation successful: " + reserved);
+
+        inventory.displayStock();
+
+        System.out.println("\nReleasing stock...");
+
+        boolean released = inventory.releaseStock(order);
+
+        System.out.println("Stock released: " + released);
+
+        inventory.displayStock();
     }
 }
