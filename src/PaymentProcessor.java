@@ -39,6 +39,17 @@ public class PaymentProcessor {
                 boolean paymentSuccessful = Math.random() < 0.9;
 
 
+                if(paymentSuccessful){
+
+
+                    order.setStatus(CustomerOrder.OrderStatus.PAID);
+
+
+
+                    warehouseQueue.put(order);
+                }
+
+
             }
         })
     }
