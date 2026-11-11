@@ -55,12 +55,12 @@ public class InventoryManager {
 
         if(reservation == null){
 
-            return false
+            return false;
         }
 
         String productId = reservation.getProductId();
 
-        int quantity = reservation.getQuantity()
+        int quantity = reservation.getQuantity();
 
 
         stock.put( productId, stock.get(productId) + quantity);
@@ -79,6 +79,18 @@ public class InventoryManager {
     public synchronized int getAvailableStock(String productId){
 
         return stock.getOrDefault(productId, 0);
+    }
+
+
+
+    public synchronized void displayStock() {
+
+        System.out.println("\nRemaining Inventory:");
+
+        for(String productId : stock.keySet()){
+
+            System.out.println("Product " + productId + ": "+ stock.get(productId));
+        }
     }
 
 
