@@ -29,7 +29,17 @@ public class PaymentProcessor {
 
         paymentPool.submit(() -> {
 
-            
+            try{
+
+                System.out.println("Currently processing payment for " + order.getOrderId() + "using " + Thread.currentThread().getName());
+
+
+                Thread.sleep(600);
+
+                boolean paymentSuccessful = Math.random() < 0.9;
+
+
+            }
         })
     }
 }
