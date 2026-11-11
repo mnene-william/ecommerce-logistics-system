@@ -76,7 +76,10 @@ public class InventoryManager {
     }
 
 
-    public
+    public synchronized int getAvailableStock(String productId){
+
+        return stock.getOrDefault(productId, 0);
+    }
 
 
 }
