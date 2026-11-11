@@ -46,5 +46,33 @@ public class CustomerOrder {
     }
 
 
+    public String getOrderId() {
+
+
+        return orderId;
+    }
+
+    public String getCustomerName(){
+
+        return customerName;
+
+    }
+
+    public String getProductId(){
+
+        return productId;
+    }
+
+
+    public int getQuantity(){
+
+        return quantity;
+    }
+
+    public OrderStatus getStatus(){
+
+        return status;
+    }
+
     
 }
