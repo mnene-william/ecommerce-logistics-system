@@ -11,5 +11,24 @@ public class CustomerOrder {
     private volatile OrderStatus status;
 
 
+    public enum OrderStatus {
+
+        PENDING,
+        RESERVED,
+        PAID,
+        PROCESSING,
+        READY_TO_BE_DELIVERED,
+        DISPATCHED,
+        DELIVERED,
+        CANCELLED,
+        FAILED,
+
+
+    }
+
+
+    
+
+
     
 }
