@@ -67,6 +67,21 @@ public class PaymentProcessor {
 
 
             }
-        })
+
+            catch(InterruptedException e) {
+
+                Thread.currentThread(). interrupt();
+
+
+                order.setStatus(CustomerOrder.OrderStatus.FAILED);
+
+                inventory.releaseStock(order);
+
+
+            }
+        });
     }
+
+
+    public voide
 }
