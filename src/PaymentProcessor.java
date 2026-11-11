@@ -47,7 +47,12 @@ public class PaymentProcessor {
 
 
                     warehouseQueue.put(order);
+
+                    System.out.println("The Payment made had been successful: " + order.getOrderId());
                 }
+
+
+                
 
 
             }
