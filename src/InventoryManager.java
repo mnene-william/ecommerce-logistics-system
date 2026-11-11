@@ -68,7 +68,15 @@ public class InventoryManager {
         return true;
     }
 
+    
 
+    public synchronized boolean confirmDispacth(CustomerOrder order){
+
+        return reservations.remove(order.getOrderId()) != null;
+    }
+
+
+    public
 
 
 }
