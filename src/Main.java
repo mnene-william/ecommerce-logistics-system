@@ -6,7 +6,7 @@ public class Main {
 
         InventoryManager inventory = new InventoryManager();
 
-        CustomerOrder order = new CustomerOrder("ORD001", "William", "A", 20);
+        CustomerOrder order = new CustomerOrder("ORDER001", "William", "A", 20);
 
         System.out.println("Initial stock:");
 

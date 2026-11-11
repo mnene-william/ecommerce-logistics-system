@@ -73,7 +73,7 @@ public class InventoryManager {
 
     
 
-    public synchronized boolean confirmDispacth(CustomerOrder order){
+    public synchronized boolean confirmDispatch(CustomerOrder order){
 
         return reservations.remove(order.getOrderId()) != null;
     }
