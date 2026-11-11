@@ -27,7 +27,23 @@ public class CustomerOrder {
     }
 
 
-    
+    public CustomerOrder(String orderId, String customerName, String productId, int quantity){
+
+        if (quantity <= 0){
+
+            throw new IllegalArgumentException("The quantity you enter must always be positive.");
+
+
+
+        }
+
+
+        this.orderId = orderId;
+        this.customerName = customerName;
+        this.productId = productId;
+        this.quantity = quantity;
+        this.status = OrderStatus.PENDING;
+    }
 
 
     
