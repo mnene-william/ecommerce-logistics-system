@@ -49,10 +49,21 @@ public class PaymentProcessor {
                     warehouseQueue.put(order);
 
                     System.out.println("The Payment made had been successful: " + order.getOrderId());
-                }
-
-
+                } 
                 
+                else{
+
+                    order.setStatus( CustomerOrder.OrderStatus.FAILED);
+
+                    inventory.releaseStock(order);
+
+                    System.out.println("The Payment made had failed: " + order.getOrderId());
+
+
+
+
+            
+                }
 
 
             }
