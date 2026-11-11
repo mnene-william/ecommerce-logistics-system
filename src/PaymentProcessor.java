@@ -11,5 +11,25 @@ public class PaymentProcessor {
     private final InventoryManager inventory;
 
     private final BlockingQueue<CustomerOrder> warehouseQueue;
-    
+
+
+    public PaymentProcessor(InventoryManager inventory, BlockingQueue<CustomerOrder> warehouseQueue){
+
+        this.inventory = inventory;
+        this.warehouseQueue = warehouseQueue;
+
+
+
+
+
+    }
+
+    public void submitPayment(CustomerOrder order){
+
+
+        paymentPool.submit(() -> {
+
+            
+        })
+    }
 }
