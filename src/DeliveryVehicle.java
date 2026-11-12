@@ -5,6 +5,8 @@ public class DeliveryVehicle{
 
     private final String vehicleId;
 
+    private int deliveriesCompleted = 0;
+
   
 
     public DeliveryVehicle(String vehicleId){
