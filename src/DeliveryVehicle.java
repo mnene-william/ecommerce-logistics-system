@@ -42,6 +42,11 @@ public class DeliveryVehicle{
             return vehicleId;
         }
 
+        public int getDeliveriesCompleted(){
+
+            return deliveriesCompleted;
+        }
+
 
 
     
