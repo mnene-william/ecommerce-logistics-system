@@ -20,6 +20,8 @@ public class DeliveryManager{
 
     private final Semaphore vehicleSemaphore = new Semaphore(4);
 
+    private final InventoryManager inventory;
+
 
     public DeliveryManager(BlockingQueue<CustomerOrder> deliveryQueue, InventoryManager inventory){
 
