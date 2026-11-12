@@ -69,6 +69,8 @@ public class Main {
     warehouseWorker.shutdown();
     deliveryManager.shutdown();
 
+    deliveryManager.displayVehicleUtilization();
+
     int delivered = 0;
     int failed = 0;
 
