@@ -83,5 +83,9 @@ public class PaymentProcessor {
     }
 
 
-    public voide
+    public void shutdown(){
+
+
+        paymentPool.shutdown();
+    }
 }
