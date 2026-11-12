@@ -86,7 +86,7 @@ public class Main {
     deliveryManager.displayVehicleUtilization();
 
     int delivered = 0;
-    int failed = 0;
+    
 
 
     for(CustomerOrder order : orders){
@@ -100,7 +100,7 @@ public class Main {
 
         else if (order.getStatus() == CustomerOrder.OrderStatus.FAILED){
 
-            failed++;
+            
         }
     }
 
@@ -110,9 +110,11 @@ public class Main {
 
         System.out.println("Number of orders rejected due to insufficient stock: " + rejectedStock);
 
+        System.out.println("Payment failures: " + paymentFailures);
+
         System.out.println("Number of Successfully delivered orders: " + delivered);
 
-        System.out.println("Number of failed orders: " + failed);
+        System.out.println("Total unsuccessful orders: " + (rejectedStock + paymentFailures));
 
         inventory.displayStock();
 
