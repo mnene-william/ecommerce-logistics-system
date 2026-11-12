@@ -62,6 +62,12 @@ for (int i = 1; i <= 1000; i++){
         order.setStatus(CustomerOrder.OrderStatus.FAILED);
         rejectedStock++;
     }
+
+    paymentProcessor.shutdown();
+    warehouseWorker.shutdown();
+    deliveryManager.shutdown();
+
+    
 }
 
 
