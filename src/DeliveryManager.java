@@ -52,9 +52,9 @@ public class DeliveryManager{
                         } finally{
 
                             vehicleSemaphore.release();
-                        }
-
-                        catch(InterruptedException e){
+                        } 
+                        
+                    }  catch(InterruptedException e){
 
                             Thread.currentThread().interrupt();
                             break;
@@ -66,6 +66,7 @@ public class DeliveryManager{
                 });
                 
             }
+    }
             
 
             public void shutdown(){
@@ -86,6 +87,6 @@ public class DeliveryManager{
 
                     deliveryPool.shutdown();
                 }
-        }
+        
     }
 }
