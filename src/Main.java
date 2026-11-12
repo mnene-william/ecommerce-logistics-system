@@ -76,7 +76,11 @@ for (int i = 1; i <= 1000; i++){
         if (order.getStatus() == CustomerOrder.OrderStatus.DELIVERED){
 
             delivered++;
+
+            notificationService.sendNotification(order, "Dear Zodiacs customer, your order has been delivered successfully.")
         }
+
+
     }
 
 
