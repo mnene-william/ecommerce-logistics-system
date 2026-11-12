@@ -75,6 +75,13 @@ public class InventoryManager {
 
         boolean released = releaseStock(order);
 
+        if(!released){
+
+            return false;
+        }
+
+        
+
 
     }
 
