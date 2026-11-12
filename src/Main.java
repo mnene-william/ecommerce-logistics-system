@@ -30,6 +30,10 @@ System.out.println("===THE ZODIACS LOGISTICS SYSTEM IS STARTING===");
 
 inventory.displayStock();
 
+deliveryManager.startDelivering();
+warehouseWorker.startWorkers();
+
+
 
 
 
