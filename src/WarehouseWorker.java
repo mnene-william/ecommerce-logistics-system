@@ -12,5 +12,19 @@ public class WarehouseWorker{
 
     private final BlockingQueue<CustomerOrder> deliveryQueue;
 
-    
+
+    public WarehouseWorker( 
+
+        BlockingQueue<CustomerOrder> warehouseQueue,
+        BlockingQueue<CustomerOrder> deliveryQueue) {
+
+            this.warehouseQueue = warehouseQueue;
+            this.deliveryQueue = deliveryQueue;
+
+
+
+
+    }
+
+
 }
