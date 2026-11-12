@@ -80,6 +80,10 @@ public class InventoryManager {
             return false;
         }
 
+        order.setStatus(CustomerOrder.OrderStatus.CANCELLED);
+
+        System.out.println("Order cancelled: " + order.getOrderId());
+
         
 
 
