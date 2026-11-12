@@ -94,7 +94,7 @@ public class PaymentProcessor {
 
             if(!paymentPool.awaitTermination(2, TimeUnit.MINUTES)){
 
-                paymentPool.shutDownNow();
+                paymentPool.shutdownNow();
             }
         }
     }
