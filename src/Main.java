@@ -1,45 +1,44 @@
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 
-InventoryManager inventory = new InventoryManager();
 
-BlockingQueue<CustomerOrder> warehouseQueue = new LinkedBlockingQueue<>();
+public class Main {
+   
+   public static void main(String[] args){ 
+    InventoryManager inventory = new InventoryManager();
 
-BlockingQueue<CustomerOrder> deliveryQueue = new LinkedListBlockingQueue<>();
+    BlockingQueue<CustomerOrder> warehouseQueue = new LinkedBlockingQueue<>();
 
+    BlockingQueue<CustomerOrder> deliveryQueue = new LinkedBlockingQueue<>();
 
-PaymentProcessor paymentProcessor = new PaymentProcessor(inventory, warehouseQueue);
+    PaymentProcessor paymentProcessor = new PaymentProcessor(inventory, warehouseQueue);
 
-WarehouseWorker warehouseWorker = new WarehouseWorker(warehouseQueue, deliveryQueue);
+    WarehouseWorker warehouseWorker = new WarehouseWorker(warehouseQueue, deliveryQueue);
 
-DeliveryManager deliveryManager = new DeliveryManager(deliveryQueue);
+    DeliveryManager deliveryManager = new DeliveryManager(deliveryQueue);
 
-NotificationService notificationService = new Notification();
+    NotificationService notificationService = new NotificationService();
 
-List<CustomerOrder> orders = new ArrayList<>();
+    List<CustomerOrder> orders = new ArrayList<>();
 
-int rejectedStock = 0;
+    int rejectedStock = 0;
 
+    System.out.println("===THE ZODIACS LOGISTICS SYSTEM IS STARTING===");
 
-System.out.println("===THE ZODIACS LOGISTICS SYSTEM IS STARTING===");
+    inventory.displayStock();
 
-inventory.displayStock();
+    deliveryManager.startDelivering();warehouseWorker.startWorkers();
 
-deliveryManager.startDelivering();
-warehouseWorker.startWorkers();
-
-
-for (int i = 1; i <= 1000; i++){
+    for(int i = 1;i<=1000; i++){
 
     String productId = (i % 2 == 0) ? "A" : "B";
 
 
-    CustomerOrder order = newCustomerOrder(
+    CustomerOrder order = new CustomerOrder(
 
         "ORDER-" + i,
 
@@ -62,6 +61,9 @@ for (int i = 1; i <= 1000; i++){
         order.setStatus(CustomerOrder.OrderStatus.FAILED);
         rejectedStock++;
     }
+}
+   
+
 
     paymentProcessor.shutdown();
     warehouseWorker.shutdown();
@@ -77,15 +79,16 @@ for (int i = 1; i <= 1000; i++){
 
             delivered++;
 
-            notificationService.sendNotification(order, "Dear Zodiacs customer, your order has been delivered successfully.")
+            notificationService.sendNotification(order, "Dear Zodiacs customer, your order has been delivered successfully.");
         }
 
         else if (order.getStatus() == CustomerOrder.OrderStatus.FAILED){
 
             failed++;
         }
+    }
 
-        System.out.println("\===THE ZODIACS FINAL SYSTEM REPORT===");
+        System.out.println("\n===THE ZODIACS FINAL SYSTEM REPORT===");
 
         System.out.println("Total number of orders received: " + orders.size());
 
@@ -98,16 +101,8 @@ for (int i = 1; i <= 1000; i++){
         inventory.displayStock();
 
 
-    }
+    
 
 
 }
-
-
-
-
-
-
-
-
-
+}
