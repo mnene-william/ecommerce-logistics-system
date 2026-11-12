@@ -19,7 +19,15 @@ WarehouseWorker warehouseWorker = new WarehouseWorker(warehouseQueue, deliveryQu
 
 DeliveryManager deliveryManager = new DeliveryManager(deliveryQueue);
 
-NotificationService notificationService = new Notififcation();
+NotificationService notificationService = new Notification();
+
+List<CustomerOrder> orders = new ArrayList<>();
+
+int rejectedStock = 0;
+
+
+
+
 
 
 
