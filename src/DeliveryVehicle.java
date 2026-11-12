@@ -15,8 +15,7 @@ public class DeliveryVehicle{
 
 
 
-    public void deliver(CustomerOrder order){
-
+    public void deliver(CustomerOrder order)
 
         throws InterruptedException{
 
@@ -32,9 +31,15 @@ public class DeliveryVehicle{
 
             System.out.println("The Order " + order.getOrderId() + " has been successfully delivered by " + vehicleId);
         }
-
         
 
 
-    }
+        public String getVehicleId() {
+
+            return vehicleId;
+        }
+
+
+
+    
 }
