@@ -26,6 +26,11 @@ List<CustomerOrder> orders = new ArrayList<>();
 int rejectedStock = 0;
 
 
+System.out.println("===THE ZODIACS LOGISTICS SYSTEM IS STARTING===");
+
+inventory.displayStock();
+
+
 
 
 
