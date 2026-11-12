@@ -71,6 +71,13 @@ public class InventoryManager {
         return true;
     }
 
+    public synchronized boolean cancelOrder(CustomerOrder order){
+
+        boolean released = releaseStock(order);
+
+
+    }
+
     
 
     public synchronized boolean confirmDispatch(CustomerOrder order){
