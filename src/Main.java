@@ -55,6 +55,8 @@ public class Main {
 
     if(reserved){
 
+        submittedOrders.add(order);
+
         paymentProcessor.submitPayment(order);
     }
 
