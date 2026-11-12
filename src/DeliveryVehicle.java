@@ -24,7 +24,16 @@ public class DeliveryVehicle{
 
             System.out.println(vehicleId + " is currently delivering order " + order.getOrderId() + "to a customer");
 
+
+
+            Thread.sleep(2000);
+
+            order.setStatus(CustomerOrder.OrderStatus.DELIVERED);
+
+            System.out.println("The Order " + order.getOrderId() + " has been successfully delivered by " + vehicleId);
         }
+
+        
 
 
     }
