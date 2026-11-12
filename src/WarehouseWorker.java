@@ -52,6 +52,16 @@ public class WarehouseWorker{
 
 
                         System.out.println("This Warehouse worker" + Thread.currentThread().getName() + "is preparing" + order.getOrderId());
+
+                        Thread.sleep(1000);
+
+                        order.setStatus(CustomerOrder.OrderStatus.READY_TO_BE_DELIVERED);
+
+                        deliveryQueue.put(order);
+
+
+
+                        System.out.println("The order is ready to be delivered: " + order.getOrderId());
                         )
                     }
                 }
