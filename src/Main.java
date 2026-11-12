@@ -49,6 +49,19 @@ for (int i = 1; i <= 1000; i++){
     );
 
     orders.add(order);
+
+    boolean reserved = inventory.reserveStock(order);
+
+    if(reserved){
+
+        paymentProcessor.submitPayment(order);
+    }
+
+    else {
+
+        order.setStatus(CustomerOrder.OrderStatus.FAILED);
+        rejectedStock++;
+    }
 }
 
 
