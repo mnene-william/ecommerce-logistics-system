@@ -7,6 +7,12 @@ public class NotificationService{
 
 
 
-        
+        System.out.println(
+
+
+            "\nNotification" + "\nThe Customer: " + order.getCustomerName() + "\n The order made: " + order.getOrderId() + "\nMessage: " + message
+        );
+
+
     }
 }
