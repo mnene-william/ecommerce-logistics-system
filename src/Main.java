@@ -34,6 +34,12 @@ deliveryManager.startDelivering();
 warehouseWorker.startWorkers();
 
 
+for (int i = 1; i <= 1000; i++){
+
+    String productId = (i % 2 == 0) ? "A" : "B";
+}
+
+
 
 
 
