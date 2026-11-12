@@ -30,6 +30,7 @@ public class DeliveryVehicle{
             Thread.sleep(2000);
 
             order.setStatus(CustomerOrder.OrderStatus.DELIVERED);
+            deliveriesCompleted++;
 
             System.out.println("The Order " + order.getOrderId() + " has been successfully delivered by " + vehicleId);
         }
