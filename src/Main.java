@@ -19,7 +19,7 @@ public class Main {
 
     WarehouseWorker warehouseWorker = new WarehouseWorker(warehouseQueue, deliveryQueue);
 
-    DeliveryManager deliveryManager = new DeliveryManager(deliveryQueue);
+    DeliveryManager deliveryManager = new DeliveryManager(deliveryQueue, inventory);
 
     NotificationService notificationService = new NotificationService();
 
