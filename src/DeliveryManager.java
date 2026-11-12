@@ -81,6 +81,11 @@ public class DeliveryManager{
                     }
 
                     deliveryPool.shutdown();
+
+                    if(!deliveryPool.awaitTermination(2, TimeUnit.MINUTES)){
+
+                        deliveryPool.shutdownNow();
+                    }
                 } 
 
                 catch (InterruptedException e){
