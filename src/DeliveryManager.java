@@ -35,6 +35,8 @@ public class DeliveryManager{
 
             final DeliveryVehicle vehicle = new DeliveryVehicle("Vehicle-" + i);
 
+            vehicles.add(vehicle);
+
             deliveryPool.submit(() -> {
 
                 while(true) {
