@@ -109,6 +109,14 @@ public class DeliveryManager{
 
     public void displayVehicleUtilization(){
 
+        System.out.println("\nHow vehicles were utilized: ");
+
+
+        for (DeliveryVehicle vehicle: vehicles){
+            
+        
+
         System.out.println(vehicle.getVehicleId() + " completed " + vehicle.getDeliveriesCompleted() + " deliveries.");
+        }
     }
 }
