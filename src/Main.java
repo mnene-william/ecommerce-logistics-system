@@ -73,6 +73,16 @@ public class Main {
     warehouseWorker.shutdown();
     deliveryManager.shutdown();
 
+    int paymentFailures = 0;
+
+    for(CustomerOrder order: submittedOrders){
+
+        if(order.getStatus() == CustomerOrder.OrderStatus.FAILED){
+
+            paymentFailures++;
+        }
+    }
+
     deliveryManager.displayVehicleUtilization();
 
     int delivered = 0;
