@@ -60,7 +60,19 @@ public class DeliveryManager{
 
                         try{
 
-                            vehicle.deliver(order);
+
+                            if(inventory.confirmDispatch(order)){
+
+                                vehicle.deliver(order);
+
+
+                            }
+                            else{
+
+                                System.out.println("Dispatch has been rejected: No valid reservation for " + order.getOrderId() );
+                            }
+
+                            
                         } finally{
 
                             vehicleSemaphore.release();
