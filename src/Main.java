@@ -67,7 +67,10 @@ for (int i = 1; i <= 1000; i++){
     warehouseWorker.shutdown();
     deliveryManager.shutdown();
 
-    
+    int delivered = 0;
+    int failed = 0;
+
+
 }
 
 
