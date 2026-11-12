@@ -19,4 +19,44 @@ public class DeliveryManager{
 
         this.deliveryQueue = deliveryQueue;
     }
+
+
+    public void startDelivering(){
+
+
+        for (int i = 1; i <= 4; i++){
+
+
+            final DeliveryVehicle vehicle = new DeliveryVehicle("Vehicle-" + i);
+
+            deliveryPool.submit(() -> {
+
+                while(true) {
+
+
+                    try{
+
+                        CustomerOrder order = deliveryQueue.take();
+
+                        if(order.getOrderId().startsWith("STOP-")){
+
+
+                            break;
+                        }
+
+                        vehicleSemaphore.acquire();
+
+                        try{
+
+                            vehicle.deliver(order);
+                        } finally{
+
+                            vehicleSemaphore.release();
+                        }
+                    
+                    }
+                }
+            })
+        }
+    }
 }
