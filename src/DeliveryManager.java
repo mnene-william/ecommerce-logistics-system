@@ -78,6 +78,13 @@ public class DeliveryManager{
                     }
 
                     deliveryPool.shutdown();
+                } 
+
+                catch (InterruptedException e){
+
+                    Thread.currentThread().interrupt();
+
+                    deliveryPool.shutdown();
                 }
         }
     }
