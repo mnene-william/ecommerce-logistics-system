@@ -14,6 +14,8 @@ public class DeliveryManager{
 
     private final BlockingQueue<CustomerOrder> deliveryQueue;
 
+    private final List<DeliveryVehicle> vehicles = new ArrayList<>();
+
     private final ExecutorService deliveryPool = Executors.newFixedThreadPool(4);
 
     private final Semaphore vehicleSemaphore = new Semaphore(4);
