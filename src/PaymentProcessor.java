@@ -89,5 +89,13 @@ public class PaymentProcessor {
 
 
         paymentPool.shutdown();
+
+        try{
+
+            if(!paymentPool.awaitTermination(2, TimeUnit.MINUTES)){
+
+                paymentPool.shutDownNow();
+            }
+        }
     }
 }
