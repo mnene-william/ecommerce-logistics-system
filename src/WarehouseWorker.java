@@ -91,6 +91,12 @@ public class WarehouseWorker{
             }
 
             warehousePool.shutdown();
+
+
+            if (!warehousePool.awaitTermination(2, TimeUnit.MINUTES)){
+
+                warehousePool.shutdownNow();
+            }
         }
 
         catch(InterruptedException e){
