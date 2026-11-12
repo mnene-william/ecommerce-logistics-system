@@ -71,6 +71,15 @@ for (int i = 1; i <= 1000; i++){
     int failed = 0;
 
 
+    for(CustomerOrder order : orders){
+
+        if (order.getStatus() == CustomerOrder.OrderStatus.DELIVERED){
+
+            delivered++;
+        }
+    }
+
+
 }
 
 
