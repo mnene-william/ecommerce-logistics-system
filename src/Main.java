@@ -25,6 +25,8 @@ public class Main {
 
     List<CustomerOrder> orders = new ArrayList<>();
 
+    List<CustomerOrder> submittedOrders = new ArrayList<>();
+
     int rejectedStock = 0;
 
     System.out.println("===THE ZODIACS LOGISTICS SYSTEM IS STARTING===");
