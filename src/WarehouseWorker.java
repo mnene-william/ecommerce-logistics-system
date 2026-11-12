@@ -26,5 +26,38 @@ public class WarehouseWorker{
 
     }
 
+    public void startWorkers(){
+
+        for (int i = 0; i < 5; i++){
+
+            warehousePool.submit(() -> {
+
+                while(true) {
+
+
+                    try{
+
+
+                        CustomerOrder order = warehouseQueue.take();
+
+                        if(order.getOrderId().startsWith("STOP-")){
+
+
+                        break;
+
+                        }
+
+                        order.setStatus(
+                            CustomerOrder.OrderStatus.PROCESSING);
+
+
+                        System.out.println("This Warehouse worker" + Thread.currentThread().getName() + "is preparing" + order.getOrderId());
+                        )
+                    }
+                }
+            })
+        }
+    }
+
 
 }
