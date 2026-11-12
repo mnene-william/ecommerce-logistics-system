@@ -13,4 +13,10 @@ public class DeliveryManager{
     private final ExecutorService deliveryPool = Executors.newFixedThreadPool(4);
 
     private final Semaphore vehicleSemaphore = new Semaphore(4);
+
+
+    public DeliveryManager(BlockingQueue<CustomerOrder> deliveryQueue){
+
+        this.deliveryQueue = deliveryQueue;
+    }
 }
