@@ -53,6 +53,14 @@ public class DeliveryManager{
 
                             vehicleSemaphore.release();
                         }
+
+                        catch(InterruptedException e){
+
+                            Thread.currentThread().interrupt();
+                            break;
+
+
+                        }
                     
                     }
                 }
