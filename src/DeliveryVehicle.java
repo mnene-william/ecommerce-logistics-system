@@ -12,4 +12,20 @@ public class DeliveryVehicle{
 
         this.vehicleId = vehicleId;
     }
+
+
+
+    public void deliver(CustomerOrder order){
+
+
+        throws InterruptedException{
+
+            order.setStatus(CustomerOrder.OrderStatus.DISPATCHED);
+
+            System.out.println(vehicleId + " is currently delivering order " + order.getOrderId() + "to a customer");
+
+        }
+
+
+    }
 }
