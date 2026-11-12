@@ -62,10 +62,39 @@ public class WarehouseWorker{
 
 
                         System.out.println("The order is ready to be delivered: " + order.getOrderId());
-                        )
+                        
+                    }
+
+                    catch(InterruptedException e){
+
+                        Thread.currentThread().interrupt();
+                        break;
                     }
                 }
-            })
+            });
+        }
+    }
+
+
+
+    public void shutdown(){
+
+        try{
+
+            for (int i = 0; i < 5; i++){
+
+                warehouseQueue.put(
+                    new CustomerOrder("STOP-" + i, "SYSTEM", "STOP", 1)
+                );
+            }
+
+            warehousePool.shutdown();
+        }
+
+        catch(InterruptedException e){
+
+            Thread.currentThread().interrupt();
+            warehousePool.shutdownNow();
         }
     }
 
