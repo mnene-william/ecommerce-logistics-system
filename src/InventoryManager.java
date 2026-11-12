@@ -84,6 +84,8 @@ public class InventoryManager {
 
         System.out.println("Order cancelled: " + order.getOrderId());
 
+        return true;
+
         
 
 
