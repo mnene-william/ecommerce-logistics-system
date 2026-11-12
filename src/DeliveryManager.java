@@ -63,8 +63,22 @@ public class DeliveryManager{
                         }
                     
                     }
+                });
+                
+            }
+            
+
+            public void shutdown(){
+
+                try{
+
+                    for(int i = 0; i < 4; i++){
+
+                        deliveryQueue.put(new CustomerOrder("STOP-" + i, "SYSTEM", "STOP", 1));
+                    }
+
+                    deliveryPool.shutdown();
                 }
-            })
         }
     }
 }
