@@ -85,6 +85,18 @@ for (int i = 1; i <= 1000; i++){
             failed++;
         }
 
+        System.out.println("\===THE ZODIACS FINAL SYSTEM REPORT===");
+
+        System.out.println("Total number of orders received: " + orders.size());
+
+        System.out.println("Number of orders rejected due to insufficient stock: " + rejectedStock);
+
+        System.out.println("Number of Successfully delivered orders: " + delivered);
+
+        System.out.println("Number of failed orders: " + failed);
+
+        inventory.displayStock();
+
 
     }
 
