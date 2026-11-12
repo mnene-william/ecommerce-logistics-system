@@ -97,5 +97,11 @@ public class PaymentProcessor {
                 paymentPool.shutdownNow();
             }
         }
+        catch(InterruptedException e){
+
+            Thread.currentThread().interrupt();
+
+            paymentPool.shutdownNow();
+        }
     }
 }
