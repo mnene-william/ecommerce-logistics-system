@@ -74,6 +74,9 @@ public class DeliveryManager{
                 });
                 
             }
+
+
+
     }
             
 
@@ -101,5 +104,11 @@ public class DeliveryManager{
                     deliveryPool.shutdown();
                 }
         
+    }
+
+
+    public void displayVehicleUtilization(){
+
+        System.out.println(vehicle.getVehicleId() + " completed " + vehicle.getDeliveriesCompleted() + " deliveries.");
     }
 }
