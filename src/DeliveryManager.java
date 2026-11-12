@@ -21,9 +21,11 @@ public class DeliveryManager{
     private final Semaphore vehicleSemaphore = new Semaphore(4);
 
 
-    public DeliveryManager(BlockingQueue<CustomerOrder> deliveryQueue){
+    public DeliveryManager(BlockingQueue<CustomerOrder> deliveryQueue, InventoryManager inventory){
 
         this.deliveryQueue = deliveryQueue;
+
+        this.inventory = inventory;
     }
 
 
