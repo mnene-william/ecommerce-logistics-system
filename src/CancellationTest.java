@@ -14,15 +14,15 @@ public class CancellationTest {
 
         inventory.reserveStock(order);
 
-        System.out.println("Stock after reservation: "
-    + inventory.getAvailableStock("A"));
+
+        System.out.println("Stock after reservation: " + inventory.getAvailableStock("A"));
 
         boolean cancelled = inventory.cancelOrder(order);
 
+
         System.out.println("Cancellation successful: " + cancelled);
 
-        System.out.println("Stock after cancellation: "
-                + inventory.getAvailableStock("A"));
+        System.out.println("Stock after cancellation: " + inventory.getAvailableStock("A"));
 
         System.out.println("Order status: " + order.getStatus());
     }
